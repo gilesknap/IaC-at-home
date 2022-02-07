@@ -1,5 +1,5 @@
 # IaC-at-home
-Documentation and configuration for my attempt to bootstrap configure my home cluster from a github repo
+Documentation and configuration for my attempt to bootstrap and configure my home cluster from a github repo.
 
 ## Hardware
 - 3 * Raspberry Pi 4 with 4GB RAM +32GB USB3 flash
