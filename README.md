@@ -1,5 +1,12 @@
 # IaC-at-home
-Documentation and configuration for my attempt to bootstrap and configure my home cluster from a github repo.
+Documentation and configuration for my attempt to bootstrap and maintain my 
+home cluster from a github repo.
+
+This is to be a bare metal cluster and the goal is to bootstrap everything 
+including the base OS on each node.
+
+This is the next stage in my K8s journey with K3s. The previous work
+is documented here https://github.com/gilesknap/k3s-minecraft
 
 ## Hardware
 - 3 * Raspberry Pi 4 with 4GB RAM +32GB USB3 flash
