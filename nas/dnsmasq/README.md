@@ -4,6 +4,7 @@ This is inserted between the LAN and the upstream DNS servers. For the
 purposes of this exercise it allows us to:
 
 - Create DNS records local devices on the LAN
+- Create a local DNS Domain for your devices
 - Provide PXE boot. This lets machines on the LAN to boot from the network
   and install an OS
   
@@ -41,7 +42,10 @@ Now point at the IP configured above for DNS resolution. This is usually
 a configuration change to your DHCP server.
 
 NOTE: I had more success with changing /etc/resolve.conf on each machine
-this made the local_hosts file work. 
+this made the local_hosts file work. Maybe this is a good idea because then
+I can take down the NAS without killing my household internet (just kill
+the cluster).
+TODO: investigate best practice on the above.
 
 Verify that you can ping the local names configured in the dnsmasq.conf
 (and still see the internet!)
