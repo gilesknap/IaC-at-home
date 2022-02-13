@@ -1,7 +1,9 @@
 # Setup PXE Boot for the cluster's Heterogenous Nodes 
 
-This is just an experiment to make sure PXE boot is working. Here we 
-network boot a pi and run it with a networked boot and rootfs.
+This is just an experiment to make sure PXE boot is working. This will not
+be part of the final solution.
+
+Here we network boot a pi and run it with a networked boot and rootfs.
 
 In a later step I intend to use PXE to bootstrap the install of the OS
 to a local drive for raspis and other flavours of node (1 NUC and a VM or two)

@@ -39,17 +39,25 @@ purposes of this exercise it allows us to:
 # enable as the DNS server
 
 Now point at the IP configured above for DNS resolution. This is usually 
-a configuration change to your DHCP server.
+a configuration change to your DHCP server. You can change it on a per
+client basis by editing /etc/resolv.conf.
 
-NOTE: I had more success with changing /etc/resolve.conf on each machine
-this made the local_hosts file work. Maybe this is a good idea because then
-I can take down the NAS without killing my household internet (just kill
-the cluster).
-TODO: investigate best practice on the above.
+Also note that if you want to use short names for local machines add the 
+following to /etc/resolv.net substituting your local domain name or 'lan'
+if you have none. 
+```
+search gkh.net
+```
+UPDATE: the above is usually temporary because resolv.conf
+is managed by whatever `head /etc/resolv.conf` reports. For Ubuntu you
+can add this to /etc/systemd/resolved.conf:
+```
+Domains=gkh.net lan
+```
+then `systemctl restart man:systemd-resolved`
 
 Verify that you can ping the local names configured in the dnsmasq.conf
 (and still see the internet!)
-
 
 
 ![alt text](../../images/containerstation.png)
