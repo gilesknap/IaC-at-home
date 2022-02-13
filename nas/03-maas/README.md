@@ -53,47 +53,15 @@ Goto the subnets tab, select the VLAN of your subnet, give it a name and
 click enable DHCP
 ![alt text](../../images/subnets.png)
 
-# Get EFI boot for RASPI
 
-Format an SD Card with these instructions 
+# Commission and Deploy your machines
 
-- https://www.stephenwagner.com/2020/03/21/create-boot-partition-layout-raspberry-pi/
+Detailed instructions for deploying the Raspberry Pi are
+[here](RaspiMASS.md). Deploying to an Intel NUC was almost identical,
+except that configuring PXE boot is just a matter of going into UEFI
+settings.
 
-Unzip a release of the UEFI firware and copy to the card. Get it from
-
-- https://github.com/pftf/RPi4
-
-Boot the pi with this card to get PXE. On first boot go into advanced settings
-and remove the 3GB memory limit (if you pi has >2GB)
-
-# Patch the commissioning version of ubuntu with later release
-
-I selected for download 20.04 LTS and 21.10 impish.
-
-Only an LTS version can be used for commissioning (initial network boot). But 
-Raspi needs a kernel 5.8 and that is not available until 20.10. So use a soft link
-to pretend that 21.04 is 20.04 as follows:
-
-```
-cd /var/snap/maas/common/maas/boot-resources/current/ubuntu/arm64/ga-20.04/focal
-sudo mv stable/ stable-20.40
-sudo ln -s ../../ga-21.04/hirsute/stable/ .
-```
-
-Then in MAAS UI set 
-Settings->Configuration->Commissioning->Default minimum kernel version 
-to focal(ga-20.04). This ensures the patched kernel version is used.
-
-I expect the above issue to be resolved once 22.04 LTS is available in 
-MAAS.
-
-# commission and deploy your machines
-
-TODO - mostly just PXE boot and then click Deploy in the MAAS GUI
-(following https://maas.io/docs/snap/3.0/ui/maas-installation?utm_source=thenewstack&utm_medium=website&utm_campaign=platform)
-got this working with RASPI and Intel NUC
-
-# log in to the CLI
+# Log in to the CLI
 
 ```bash
 sudo maas apikey --username admin
