@@ -1,5 +1,8 @@
 # Dnsmasq
 
+EXPERIMENTAL ONLY - this section was to prove that RASPI can be PXE booted
+and dnsmasq is not part of the final solution.
+
 This is inserted between the LAN and the upstream DNS servers. For the 
 purposes of this exercise it allows us to:
 

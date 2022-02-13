@@ -71,7 +71,7 @@ and remove the 3GB memory limit (if you pi has >2GB)
 I selected for download 20.04 LTS and 21.10 impish.
 
 Only an LTS version can be used for commissioning (initial network boot). But 
-Raspi needs a kernel 5.8 and that is not available until 20.10. So use a mount
+Raspi needs a kernel 5.8 and that is not available until 20.10. So use a soft link
 to pretend that 21.04 is 20.04 as follows:
 
 ```
@@ -91,7 +91,7 @@ MAAS.
 
 TODO - mostly just PXE boot and then click Deploy in the MAAS GUI
 (following https://maas.io/docs/snap/3.0/ui/maas-installation?utm_source=thenewstack&utm_medium=website&utm_campaign=platform)
-got this working with RASPI using above
+got this working with RASPI and Intel NUC
 
 # log in to the CLI
 
