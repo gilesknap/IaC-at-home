@@ -21,6 +21,16 @@ bootstrapping/management. This will primarily be storage plus one or more VMs to
 run the MAAS and cluster API management node(s).
 
 # Steps 
-- [Install dnsmasq on the NAS](nas/dnsmasq/README.md)
-- TBA ...
-- ...
+
+I did some investigation into PXE booting for Raspberry Pi. However, all of 
+this is superseded by MAAS and UEFI for Raspberry Pi.
+
+- [01 set up dnsmasq](nas/01-dnsmasq/README.md)
+- [02 configure PXE boot on Pi 4](nas/02-pxe/README.md)
+
+Next I set up Canonical MAAS and a cluster management cluster.
+
+- [03 Canonical MAAS](nas/03-maas/README.md)
+- [04 Managment Cluster](nas/04-k3sManagement/README.md)
+
+

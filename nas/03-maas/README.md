@@ -102,3 +102,7 @@ maas login admin http://localhost:5240/MAAS
 # see all the stuff you can now do!
 mass admin --help
 ```
+
+Assuming the machine you are on has the private key for one of your github
+ssh keys then you can 
+ssh ubuntu@192.168.0.43
