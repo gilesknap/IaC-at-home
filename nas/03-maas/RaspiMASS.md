@@ -1,7 +1,7 @@
 # Commissioning Raspberry Pi 4 with Canonical MAAS
 
 These steps were successful in commissioning a few Raspberry Pi 4 with 
-4 GB of RAM. I used an SD Card for UEFI and a USB3 drive (32GB thumbnail) 
+4 GB of RAM. I used an SD Card for UEFI and a USB3 drive (32GB thumbdrive) 
 for OS install.
 
 # Install MAAS
@@ -91,12 +91,11 @@ If you move straight to deploying now then MAAS will try to put Ubuntu on
 The SD Card, it will fail and the Pi won't reboot since UEFI has been overwritten.
 So first go to the Storage tab for your machine. And do the following:
 
+- Filesystems:unmount both filesystems on the sd card
 - Available disks and partitions: remove both partitions of the sdcard
 - Available disks and partitions: remove physical disk of the sdcard 
 - Change Storage Layout: Flat
 
-Select 'Change storage layout'
-and choose 'Flat'. Your Storage tab should now look similar to this:
 
 ![alt text](images/partitions.png)
 

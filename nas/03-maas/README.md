@@ -3,7 +3,7 @@
 I used these resources
 
 - https://thenewstack.io/provision-bare-metal-kubernetes-with-the-cluster-api/
-- https://maas.io/docs/snap/3.0/ui/maas-installation?utm_source=thenewstack&utm_medium=website&utm_campaign=platform
+- https://maas.io/docs/snap/3.1/ui/maas-installation?utm_source=thenewstack&utm_medium=website&utm_campaign=platform
 - https://discourse.maas.io/t/raspberry-pi-4-provisioning-and-kvm-pod-setup/3607
 - https://github.com/pftf/RPi4
 
