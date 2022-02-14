@@ -22,7 +22,7 @@ and choose `Settings->Configuration->Commissioning` and set Default minimum
 kernel version to focal (hwe-20.04).
 
 If you use 20.04 for deployment, you must then select the hwe kernel at 
-deploy time. Alternatively use a more recent version that has a kernel version
+deploy time too. Alternatively use a more recent version that has a kernel version
 `>=5.8`. To configure which is the default deployment version go to 
 `Settings->Configuration->Deploy` in the MAAS Web GUI.
 
@@ -33,7 +33,8 @@ you can put the SD Card in it and
 run the script here [uefi.make.sh](uefi.make.sh). If not then use these steps:
 
 
-- Download the latest zip from 
+- Download the latest zip from the address below. I'm using 1.32 which appears
+  to have resolved previously reported issues with MAAS.
     - https://github.com/pftf/RPi4/releases
 - format an SD card using these instructions
 
@@ -125,6 +126,13 @@ be admitted.
 Below is an example summary screen for a deployed Raspberry Pi.
 
 ![alt text](images/summary.png)
+
+# Power Control
+
+To make this truly MAAS we require the addition of remote power control
+of the machines. 
+
+How about PoE smart switch + PoE hats for the RPIs? 
 
 
 
