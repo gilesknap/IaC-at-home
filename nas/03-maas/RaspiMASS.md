@@ -1,22 +1,31 @@
 # Commissioning a Raspberry Pi 4 with Canonical MAAS
 
 These steps were successful in commissioning a Raspberry Pi 4 with 
-4 GB of RAM using Ubuntu LTS 20.04. I used an SD Card for UEFI and 
-a USB3 drive (32GB thumbnail) for OS install.
+4 GB of RAM. I used an SD Card for UEFI and a USB3 drive (32GB thumbnail) 
+for OS install.
 
 # Install MAAS
 First install Canonical's MAAS as per the instructions here:
 
 - https://maas.io/docs/snap/3.0/ui/maas-installation?utm_source=thenewstack&utm_medium=website&utm_campaign=platform
 
-At present (Feb 2022) during the selection of Ubuntu images will include the 
-latest LTS 20.04. You may also choose a more recent version for deployment if 
-desired. Only LTS versions are allowed for Commissioning, but you may 
-deploy later versions. I chose to use LTS 20.04 for commissioning and deployment.
+During the above you will select the images to use. See below for which 
+images to select.
 
-20.04 default kernel will not work with Pis. To fix this issue go to the MAAS UI
+At present (Feb 2022) during the selection of Ubuntu images will include the 
+latest LTS 20.04.  Only LTS versions are allowed for Commissioning, but you may 
+deploy other versions. I chose to use LTS 21.10 for deployment.
+
+20.04 default kernel will not work with Pis. To fix this issue go to the MAAS Web GUI
 and choose Settings->Configuration->Commissioning and set Default minimum 
-kernel version to focal (hwe-20.04)
+kernel version to focal (hwe-20.04).
+
+For deployment you could also use 20.04 but must also select the hwe kernel at 
+deploy time. Alternatively use a more recent version that has a kernel version
+>=5.8. I chose 21.10.
+
+To configure which is the default deployment version go to 
+Settings->Configuration->Deploy in the MAAS Web GUI.
 
 # Setup the Pi to PXE boot
 
@@ -53,6 +62,10 @@ Now set up UEFI and do a PXE boot
 Go back to the MAAS GUI and choose the Machines Tab. 
 
 All being well your Pi Should appear under the 'New' group like 'big-ram' below.
+MAAS has already run the commissioning step when the new machine PXE booted.
+You are still required to run the test phase before moving on to deployment.
+Note that if you make any changes to the hardware after deployment, you will
+need to release, commission, deploy again.
 
 ![alt text](images/new.png)
 
