@@ -1,6 +1,6 @@
-# Commissioning a Raspberry Pi 4 with Canonical MAAS
+# Commissioning Raspberry Pi 4 with Canonical MAAS
 
-These steps were successful in commissioning a Raspberry Pi 4 with 
+These steps were successful in commissioning a few Raspberry Pi 4 with 
 4 GB of RAM. I used an SD Card for UEFI and a USB3 drive (32GB thumbnail) 
 for OS install.
 
@@ -14,18 +14,17 @@ images to select.
 
 At present (Feb 2022) during the selection of Ubuntu images will include the 
 latest LTS 20.04.  Only LTS versions are allowed for Commissioning, but you may 
-deploy other versions. I chose to use LTS 21.10 for deployment.
+deploy other versions. I chose to use LTS 20.04 for deployment, I also tried
+21.10 but this had intermittent failures.
 
 20.04 default kernel will not work with Pis. To fix this issue go to the MAAS Web GUI
-and choose Settings->Configuration->Commissioning and set Default minimum 
+and choose `Settings->Configuration->Commissioning` and set Default minimum 
 kernel version to focal (hwe-20.04).
 
-For deployment you could also use 20.04 but must also select the hwe kernel at 
+If you use 20.04 for deployment, you must then select the hwe kernel at 
 deploy time. Alternatively use a more recent version that has a kernel version
->=5.8. I chose 21.10.
-
-To configure which is the default deployment version go to 
-Settings->Configuration->Deploy in the MAAS Web GUI.
+`>=5.8`. To configure which is the default deployment version go to 
+`Settings->Configuration->Deploy` in the MAAS Web GUI.
 
 # Setup the Pi to PXE boot
 
@@ -103,7 +102,12 @@ and choose 'Flat'. Your Storage tab should now look similar to this:
 
 You are now ready to deploy  your Pi. This will install the OS onto the
 USB disk.
-Choose Take Action -> Deploy.
+Choose Take Action -> Deploy. If you are installing 20.04 make sure 
+you choose the hwe version of the kernel. You should see the choice at the
+top of the screen like this.
+
+![alt text](images/switch_kernel.png)
+
 Make sure you select 'Allow SSH access and prevent machine powering off'
 You will need a power cycle to kick off the deployment .
 Continue to watch the logs and you will eventually see:
