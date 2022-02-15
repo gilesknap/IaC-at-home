@@ -31,6 +31,8 @@ this is superseded by MAAS and UEFI for Raspberry Pi.
 Next I set up Canonical MAAS and a cluster management cluster.
 
 - [03 Canonical MAAS](nas/03-maas/README.md)
-- [04 Managment Cluster](nas/04-k3sManagement/README.md)
+- [03.5 Raspberry Pi MAAS](nas/03-maas/RaspiMASS.md)
+- [04 K3S packer image](nas/04-deployk3sPacker/README.md)
+- [05 Management Cluster](nas/05-k3sManagement/README.md)
 
 

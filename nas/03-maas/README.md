@@ -7,7 +7,7 @@ I used these resources
 - https://discourse.maas.io/t/raspberry-pi-4-provisioning-and-kvm-pod-setup/3607
 - https://github.com/pftf/RPi4
 
-A great place to put the MAAS and mangement cluster is in a VM on the NAS. 
+A great place to put the MAAS and management cluster is in a VM on the NAS. 
 This can then be backed up easily with facilities in QNAP Virtualization Station.
 
 Using https://www.qnap.com/en-uk/software/virtualization-station I have 
