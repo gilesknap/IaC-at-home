@@ -28,32 +28,12 @@ deploy time too. Alternatively use a more recent version that has a kernel versi
 
 # Setup the Pi to PXE boot
 
-First create a UEFI SD Card. If you still have a Pi running raspi OS, 
-you can put the SD Card in it and
-run the script here [uefi.make.sh](uefi.make.sh). If not then use these steps:
+Now we need to create an SD card that boots the UEFI firware. This supports 
+PXE Boot.
 
+See [Make UEFI SD Card](MakeUefiSd.md)
 
-- Download the latest zip from the address below. I'm using 1.32 which appears
-  to have resolved previously reported issues with MAAS.
-    - https://github.com/pftf/RPi4/releases
-- format an SD card using these instructions
-
-    - https://www.stephenwagner.com/2020/03/21/create-boot-partition-layout-raspberry-pi/
-- unzip the contents of RPi4_UEFI_Firmware_v1.32.zip (or higher) into
-  the root of the SD card.
-
-Now set up UEFI and do a PXE boot  
-- make sure your pi is setup to boot from SD then USB by running raspi-config
-  and going to Advanced Options -> Boot Order
- reboot and hit ESC to go into settings
-- Go to DEVICE->RaspberryPi  Configuration-> Advanced and set Limit RAM to 3 GB to Disabled
-- I also went into Boot Options -> Delete Boot Options and removed everything 
-  except PXE boot over IPv4. This guarantees that the PI will always contact MAAS
-  on a reboot (Once the machine is Deployed MAAS will tell it to continue the boot
-  from the USB drive)
-- reboot again
-- You should see PXE boot like this
-
+Once you reboot with PXE enabled you should see this screen
 
 ![alt text](images/pxe.png)
 
@@ -129,9 +109,9 @@ Below is an example summary screen for a deployed Raspberry Pi.
 # Power Control
 
 To make this truly MAAS we require the addition of remote power control
-of the machines. 
+of the machines. See https://github.com/gilesknap/maaspower
 
-How about PoE smart switch + PoE hats for the RPIs? 
+
 
 
 
