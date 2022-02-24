@@ -10,7 +10,7 @@ spec:
  
 ---
  
-apiVersion: cluster.x-k8s.io/v1beta1
+apiVersion: cluster.x-k8s.io/v1alpha4
 kind: Cluster 
 metadata: 
   name: my-cluster 
@@ -22,7 +22,7 @@ spec:
       cidrBlocks: ["192.168.0.0/16"] 
     serviceDomain: "cluster.local" 
   controlPlaneRef: 
-    apiVersion: controlplane.cluster.x-k8s.io/v1beta1
+    apiVersion: controlplane.cluster.x-k8s.io/v1alpha4
     kind: KubeadmControlPlane 
     name: my-cluster-cp 
     namespace: default 
@@ -43,11 +43,11 @@ spec:
   template: 
     spec: 
       minCPU: 2 
-      minMemory: 4096 
-      image: u-1804-0-k-11912-0 
+      minMemory: 3072
+      image: ubuntu/hirsute 
 ---
  
-apiVersion: controlplane.cluster.x-k8s.io/v1beta1
+apiVersion: controlplane.cluster.x-k8s.io/v1alpha4
 kind: KubeadmControlPlane 
 metadata: 
   name: my-cluster-cp 
@@ -78,12 +78,13 @@ spec:
   template: 
     spec: 
       minCPU: 2 
-      minMemory: 4096 
-      image: u-1804-0-k-11912-0
+      minMemory: 3072
+      image: ubuntu/hirsute
+
  
 ---
  
-apiVersion: cluster.x-k8s.io/v1beta1
+apiVersion: cluster.x-k8s.io/v1alpha4
 kind: MachineDeployment 
 metadata: 
   name: my-cluster-worker 
@@ -100,7 +101,7 @@ spec:
       version: 1.19.12 
       bootstrap: 
         configRef: 
-          apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
+          apiVersion: bootstrap.cluster.x-k8s.io/v1alpha4
           kind: KubeadmConfigTemplate 
           name: my-cluster-worker 
       infrastructureRef: 
@@ -110,7 +111,7 @@ spec:
  
 ---
  
-apiVersion: bootstrap.cluster.x-k8s.io/v1beta1
+apiVersion: bootstrap.cluster.x-k8s.io/v1alpha4
 kind: KubeadmConfigTemplate 
 metadata: 
   name: my-cluster-worker 
