@@ -27,6 +27,8 @@ For this procedure you will require:
 - Any number of target RPIs - these will need a keyboard and screen
   connected to complete the process
 - One SD Card per target RPI, you only need 5MB of space so any cards will do.
+- the zip tool needs to be installed on the builder machine
+  - `sudo apt -y install zip`
 
 
 Step 1 Create the UEFI SD Cards

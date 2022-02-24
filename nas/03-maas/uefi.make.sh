@@ -38,21 +38,23 @@ unit: sectors
 $PARTITION : start=        2048, size=    2000000000, type=c, bootable
 EOT
 
-curl -L ${URL} -o uefi.firmware.zip
-
 mkdir -p sdcard
 sudo mkfs.fat $PARTITION
 sudo mount $PARTITION sdcard
 
-cd sdcard
 if [ -z $ZIPFILE ] ; then 
-sudo unzip ../$ZIPFILE
-else
+# no zipfile specified - download the firmware from github
+curl -L ${URL} -o uefi.firmware.zip
+cd sdcard
 sudo unzip ../uefi.firmware.zip
+rm ../uefi.firmware.zip
+else
+# use the zipfile specified in ${1}
+cd sdcard
+sudo unzip ../$ZIPFILE
 fi
 
 cd ..
 sudo umount $PARTITION
 
 rmdir sdcard
-rm uefi.firmware.zip
