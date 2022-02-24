@@ -47,3 +47,18 @@ Install the cluster-api-provider-maas provider:
 kubectl apply -f https://github.com/spectrocloud/cluster-api-provider-maas/releases/download/v0.3.0/infrastructure-components.yaml
 ```
 
+Add your MAAS cluster credentials to a management cluster secret
+using [maas_secret.yaml](../../code/maas_secret.yaml)
+
+
+Next prepare a YAML file that describes the required cluster.
+
+Mine is [here](../../code/mycluster.yaml)
+
+Note that when copying this from (here)[https://thenewstack.io/provision-bare-metal-kubernetes-with-the-cluster-api/]
+It is important to update any API versions to their current version.
+This command will tell you the API versions in the management cluster:
+
+```
+kubectl api-versions
+```
