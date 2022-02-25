@@ -26,6 +26,8 @@ deploy time too. Alternatively use a more recent version that has a kernel versi
 `>=5.8`. To configure which is the default deployment version go to 
 `Settings->Configuration->Deploy` in the MAAS Web GUI.
 
+Before proceeding, ensure that you have selected and sychronised the ARM64 20.04 LTS image under the images tab.
+
 # Setup the Pi to PXE boot
 
 Now we need to create an SD card that boots the UEFI firware. This supports 
