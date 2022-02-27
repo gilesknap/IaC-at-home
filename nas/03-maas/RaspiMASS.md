@@ -53,7 +53,7 @@ You can now click on the new machine and see a summary.
 Go to the machine Configuration Tab an set Power Configuration to Manual. 
 Use the Take Action button to choose the Test command. 
 
-IMPORTANT: Select the tick box 'Allow SSH access and prevent machine powering off'
+~~IMPORTANT: Select the tick box 'Allow SSH access and prevent machine powering off'~~
 
 You will now need to manually power cycle the Pi to kick off this process.
 
@@ -71,10 +71,12 @@ If you move straight to deploying now then MAAS will try to put Ubuntu on
 The SD Card, it will fail and the Pi won't reboot since UEFI has been overwritten.
 So first go to the Storage tab for your machine. And do the following:
 
-- Filesystems:unmount both filesystems on the sd card
-- Available disks and partitions: remove both partitions of the sdcard
-- Available disks and partitions: remove physical disk of the sdcard 
+- Filesystems:~~unmount~~ REMOVE both filesystems on the sd card
+- Available disks and partitions: remove physical disk of the sdcard
 - Change Storage Layout: Flat
+- make sure all sd card partitions appear in the AVAILABLE section
+- TODO - would simply selecting Flat work (as I think it may remove 
+  the SD filesystems anyway)
 
 
 ![alt text](images/partitions.png)

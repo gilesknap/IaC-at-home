@@ -61,6 +61,27 @@ Detailed instructions for deploying the Raspberry Pi are
 except that configuring PXE boot is just a matter of going into UEFI
 settings.
 
+IMPORTANT: if MAAS has a disk listed in 'Used disks and partitions' then
+it will remove the partition table on that disk. If you want to keep the
+contents of the disk, have MAAS ignore it by removing it from the list.
+
+REMINDER: to bring up a disk with single partition after it has been
+trashed by MAAS (e.g. for /dev/sdb):
+```bash
+lsblk
+# list the disks and you will see a disk with no partitions e.g. /dev/sdb 
+# with no /dev/sdb1 partition associated
+sudo fdisk /dev/sdb1
+# commands d g n w and accept defaults (first d if there is existing partition to delete)
+sudo mkfs -t ext4 /dev/sdb1
+sudo blkid
+# find the UUID and and add this to /etc/fstab
+sudo vim /etc/fstab
+# UUID=70ad2e88-a8d3-40f1-a4f9-55a64d71607c /mnt/bigdisk_archive  ext4  defaults 0 1
+sudo mkdir /mnt/bigdisk_archive # maybe change permissions on this folder 
+sudo mount /mnt/bigdisk_archive 
+```
+
 # Log in to the CLI
 
 ```bash
