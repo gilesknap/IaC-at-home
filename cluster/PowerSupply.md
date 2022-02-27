@@ -32,6 +32,19 @@ be required.
 
 
 # 25W Through USBC
+
+----
+**TLDR**
+
+Not recommended, only performs as well as the cheaper and simpler
+Official Raspberry Pi USB V Power Supply. 
+
+NOTE: This result not make sense from
+the specs so maybe a better 5A power supply 
+would be able to run 3 RPIs.
+
+----
+
 I'm hoping that 25W into the USB C with a dumb power supply would do the trick
 this is because I have read 
 [here](https://uni.hi.is/helmut/2021/06/07/power-consumption-of-raspberry-pi-4-versus-intel-j4105-system/#:~:text=The%20Raspberry%20Pi%204%20consumed,5.4%20W%20and%205.5%20W.)
