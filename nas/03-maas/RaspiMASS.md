@@ -113,6 +113,8 @@ Below is an example summary screen for a deployed Raspberry Pi.
 To make this truly MAAS we require the addition of remote power control
 of the machines. See https://github.com/gilesknap/maaspower
 
+The maaspower controlled device I selected is the UUGear Mega4. To supply
+enough power to this device to run all your RPIs see [here](PowerSupply.md)
 
 
 

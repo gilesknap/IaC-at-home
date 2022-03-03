@@ -4,8 +4,6 @@
   - may need to build our own image or get spectro cloud to support user scripts (and min kernel)
 - watch this video https://vimeo.com/678697127
 - do a cli based script
-- check what voltage based throttling is happening with the 5amp supply
-  - probably want to sort out a 10AM supply wired to the 5v rail
 - fork uefi and make it default to the settings we want (look into network only device descovery option too)
 - investigate why newer ubuntu images fail to deploy 
   - I believe they are reconfiguring the sdcard and making it un-bootable
@@ -21,11 +19,11 @@
 
 # What remains for my cluster in general
 
-- Fix daily backup 'latest' link creation - it should use relative path not /backup
+- add the nas config folder to archive backup - right now these cant go in the repo
+  as they hold secrets
 - Use Thanos and qnap s3 support to fix Prometheus not liking nfs 
   (make prometheus properly persistent - this also requires fixed IPS for machines in the cluster)
 - switch to fixed IPs so as not to confuse known_hosts and prometheus
-- make gknuc mount bigdisk_archive on startup
 - in general - switch to helm charts for all k3s-minecraft YAML
 - also in general - make PVs for all apps persistence 
 - Make prometheus send notifications to slack when e.g. backups are failing
@@ -36,6 +34,13 @@
 
 # Done
 
+- check what voltage based throttling is happening with the 5amp supply
+  - probably want to sort out a 10A supply wired to the 5v rail
+- make nuc1 mount bigdisk_archive on startup
+- Fix minecraft external access - for some reason port forwards to 192.168.0.205 not happening 
+  Fixed - for some reason moving the metallb speaker to another node brought this to life.
+- Fix daily backup 'latest' link creation - it should use relative path not /backup
+  update - the link is not broken when mounted in the container at a different path
 - Fix unable to resolve local DNS names when on VPN
 - Fix reboot lockup issue on gknuc
 - Fix PXE booted Pi fails 'wating for network to be configured by CommMan'

@@ -1,5 +1,17 @@
 # Investigating the Power Supply to use with UUGear MEGA4
 
+# Summary
+
+With the UUGear 4 Port PPS you will find that RPIs will under voltage throttle
+if there are too many for the power supply.
+- 2 RPIs are supported by the Official RPI USB C 15W supply
+- 3 RPIs could be supported by a 5V 5A supply with a usb C conversion plug. This 
+  must be 'dumb' and not use Power Delivery Protocol. It must also be a 
+  well regulated supply that maintains voltage under load - the one I tried 
+  only supported 2 RPIs
+- 4 RPIs could be supported by soldering a 5V 10A supply to the power rail headers
+
+# Details of research
 I got this useful info from UUGear:
 
 ---
@@ -18,7 +30,7 @@ Tanya
 
 ---
 
-# Official Raspberry Pi 3A supply
+## Official Raspberry Pi 3A supply
 
 I tested this supply with the same approach as below for the 5A supply.
 This performed just as well as the 5A supply, happily running 2 RPIs but
@@ -26,22 +38,21 @@ seeing throttling when a 3rd RPI is added.
 
 Therefore this is the ideal option if you don't want to do any soldering. If 
 you wish to support more than 2 RPIs per UUGear MEGA4 then soldering will
-be required.
+be required. Or potentially a better regulated 5V 5A supply would suffice.
 
 ![alt text](images/pipower.png)
 
 
-# 25W Through USBC
+## 25W Through USBC
 
 ----
 **TLDR**
 
 Not recommended, only performs as well as the cheaper and simpler
-Official Raspberry Pi USB V Power Supply. 
+Official Raspberry Pi USB V Power Supply.
 
-NOTE: This result not make sense from
-the specs so maybe a better 5A power supply 
-would be able to run 3 RPIs.
+NOTE: This result not make sense from the specs. A better regulated 5A power supply 
+should be able to run 3 RPIs.
 
 ----
 
@@ -81,9 +92,9 @@ This test shows that 2 PIS can be supported by this power supply at full
 cpu usage. A third PI not even running stress, causes us to start seeing
 under voltage throttling.
 
-# 50w Supply wired to power rails
+## 50w Supply wired to power rails
 
-Next I am ordering one of these
+Next I am ordering one of these (also available on Amazon with better price)
 - https://uk.rs-online.com/web/p/embedded-switch-mode-power-supplies-smps/1618278
 
 ![alt text](images/ps10a.png)

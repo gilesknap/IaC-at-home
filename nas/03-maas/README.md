@@ -11,7 +11,7 @@ A great place to put the MAAS and management cluster is in a VM on the NAS.
 This can then be backed up easily with facilities in QNAP Virtualization Station.
 
 Using https://www.qnap.com/en-uk/software/virtualization-station I have 
-created an Ubuntu 20.04 Server VM called gkvm.
+created an Ubuntu 20.04 Server VM called vmaas1.
 
 This machine will become the DHCP Server so will require a fixed IP.
 https://www.linuxtechi.com/assign-static-ip-address-ubuntu-20-04-lts/
