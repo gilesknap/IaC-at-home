@@ -2,14 +2,16 @@
 
 # Summary
 
-With the UUGear 4 Port PPS you will find that RPIs will under voltage throttle
-if there are too many for the power supply.
+With the UUGear 4 Port PPS you must supply additional power via the USB C 
+connection, or power rails. You will find that RPIs will under voltage throttle
+if there are too many of them for the power supply.
 - 2 RPIs are supported by the Official RPI USB C 15W supply
 - 3 RPIs could be supported by a 5V 5A supply with a usb C conversion plug. This 
   must be 'dumb' and not use Power Delivery Protocol. It must also be a 
   well regulated supply that maintains voltage under load - the one I tried 
   only supported 2 RPIs
-- 4 RPIs could be supported by soldering a 5V 10A supply to the power rail headers
+- 4 RPIs could be supported by soldering a 5V 10A supply to the power rail headers.
+  Again a well regulated supply is required.
 
 # Details of research
 I got this useful info from UUGear:
@@ -94,7 +96,9 @@ under voltage throttling.
 
 ## 50w Supply wired to power rails
 
-Next I am ordering one of these (also available on Amazon with better price)
+Next I am ordering one of these (very similar are available on Amazon with 
+a slightly better price, but I chose the official RS model since my
+experience with the 25w supply was sub-par)
 - https://uk.rs-online.com/web/p/embedded-switch-mode-power-supplies-smps/1618278
 
 ![alt text](images/ps10a.png)
@@ -104,3 +108,20 @@ This will be soldered to the power rail headers, pins GND and 5V shown here:
 ![alt text](images/header.png)
 
 This will also need an enclosure or other way of hiding exposed terminals.
+
+The results with this supply were a success. It has a voltage control pot 
+which lets you tune the voltage. It is safe to raise the voltage to
+5.1 volts and as long as it does not dip below 4.9 volts the RPIs should
+not throttle.
+
+## 4 RPIs connected to MEGA4 with > 5v sustained
+
+
+![alt text](images/100wsupply.png)
+
+## Final Setup with custom Rack
+
+
+![alt text](images/100wfinal.png)
+
+
