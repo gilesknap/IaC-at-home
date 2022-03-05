@@ -31,8 +31,20 @@ this is superseded by MAAS and UEFI for Raspberry Pi.
 Next I set up Canonical MAAS and a cluster management cluster.
 
 - [03 Canonical MAAS](nas/03-maas/README.md)
-- [03.5 Raspberry Pi MAAS](nas/03-maas/RaspiMASS.md)
-- [04 K3S packer image](nas/04-deployk3sPacker/README.md)
+  - [03.1 Raspberry Pi MAAS](nas/03-maas/RaspiMASS.md)
+  - [03.2 Raspberry Pi UEFI boot](nas/03-maas/MakeUefiSd.md)
+  - [03.3 Raspberry Pi Power Supply](nas/03-maas/PowerSupply.md)
+- 04 is only required if building a VM for KVM and this is probably not the
+  best approach for the resource limited RPIs.
+  - [04 K3S packer image](nas/04-deployk3sPacker/README.md)
 - [05 Management Cluster](nas/05-k3sManagement/README.md)
+
+At present I have Canonical MAAS deploying focal to the PIs (and an Intel NUC).
+I'm able to kick off deployment using the ClusterAPI and SpectroCloud's 
+MAAS provider but the deploy fails because focal needs a min
+kernel and the provider does not yet expose control of that.
+
+A few things could fix this:
+
 
 

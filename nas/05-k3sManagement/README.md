@@ -99,6 +99,11 @@ curl -L https://github.com/kubernetes-sigs/cluster-api/releases/download/v0.4.7/
 (copy to usr/bin/local)
 sudo chown giles /etc/rancher/k3s/k3s.yaml
 cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+
+
+kubectl apply -f mycluster.yaml
+clusterctl describe cluster my-cluster --show-conditions all
+
 ```
 
 
