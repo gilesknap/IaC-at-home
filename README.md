@@ -39,12 +39,21 @@ Next I set up Canonical MAAS and a cluster management cluster.
   - [04 K3S packer image](nas/04-deployk3sPacker/README.md)
 - [05 Management Cluster](nas/05-k3sManagement/README.md)
 
-At present I have Canonical MAAS deploying focal to the PIs (and an Intel NUC).
+At present (Mar 2022) I have Canonical MAAS deploying focal to the PIs 
+(and an Intel NUC).
 I'm able to kick off deployment using the ClusterAPI and SpectroCloud's 
 MAAS provider but the deploy fails because focal needs a min
 kernel and the provider does not yet expose control of that.
 
 A few things could fix this:
+- SpectroCloud may add min-kernel configuration
+- Deploying impish instead of focal would work as it has newer kernel, but 
+  this is not currently working either - Canonical may be able to fix this.
+- The next LTS is out soon. If that just works then all will be well.
+
+In the meantime, I'm looking into how to uplift a ubuntu machine to a
+Kubernetes node.
+- [06 Cluster Deployment](cluster/README.md)
 
 
 
