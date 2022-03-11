@@ -20,7 +20,7 @@ but any arm64 device would probably work.
 We will:
 - clone packer-provisioner-goss and build an arm64 version of it
 - clone my version image builder
-- execute a build - it will fail due to wrong goss architecture
+- execute a build - TODO: currently fails due to boot issues and QEMU not emulating RASPI 4
 
 ## Building packer-provisioner-goss
 
