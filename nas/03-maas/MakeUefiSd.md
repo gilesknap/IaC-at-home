@@ -71,7 +71,7 @@ Now download the script uefi.make.sh, set the SDCard device name and
 execute the script
 ``` bash
 curl -LO https://raw.githubusercontent.com/gilesknap/IaC-at-home/main/nas/03-maas/uefi.make.sh
-export DISK=XXXX # where XXXX is the device name identified above
+export DISK=/dev/XXXX # where XXXX is the device name identified above
 bash ./uefi.make.sh
 ```
 
