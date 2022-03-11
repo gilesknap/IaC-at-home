@@ -2,8 +2,6 @@
     "machine_type": "virt",
     "accelerator": "",
     "qemuargs": ["-cpu", "cortex-a72"],
-    "iso_url": "https://old-releases.ubuntu.com/releases/bionic/ubuntu-18.04.5-server-arm64.iso",
-    "iso_checksum": "2cd7742c91bbb325622e8314500106cfa1074fcf5a6a380e8878bbbb9974e9f3",
     "distro_arch": "arm64",
     "qemu_binary": "qemu-system-aarch64",
     "containerd_url": "https://github.com/containerd/containerd/releases/download/v{{user `containerd_version`}}/cri-containerd-cni-{{user `containerd_version`}}-linux-arm64.tar.gz",
