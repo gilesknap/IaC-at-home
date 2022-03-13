@@ -1,4 +1,7 @@
 # Image Builder
+
+WORK IN PROGRESS and DEPRECATED In favour of [this](../imagebuild/README.md)
+
 To make clusterAPI work with MAAS we need to build our own OS arm64 image.
 
 I got some fantastic help with this from Saad and Deepak at https://www.spectrocloud.com/
