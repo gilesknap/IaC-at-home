@@ -90,6 +90,9 @@ maas login admin http://localhost:5240/MAAS
 
 # see all the stuff you can now do!
 mass admin --help
+
+# For RPIs with slow disks it is worth increasing the deployment timeout value:
+maas admin maas set-config name=node_timeout value=200
 ```
 
 Assuming the machine you are on has the private key for one of your github
