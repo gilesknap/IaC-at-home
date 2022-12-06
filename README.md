@@ -1,5 +1,13 @@
 # IaC-at-home
 
+PROJECT STALLED
+
+I got bogged down in creating a kubernetes image for raspberry pi and have
+moved on to other projects for the time being.
+
+I did get as far as making a MAAS deployed cluster and helping to write this
+[tutorial for Canoncial](https://maas.io/tutorials/build-your-own-bare-metal-cloud-using-a-raspberry-pi-cluster-with-maas#1-overview)
+
 WORK IN PROGRESS
 
 Documentation and configuration for my attempt to bootstrap and maintain my 
