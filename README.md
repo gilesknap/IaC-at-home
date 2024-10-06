@@ -1,5 +1,9 @@
 # IaC-at-home
 
+UPDATE for Oct 2024
+
+Moving on to a second attempt at this here https://github.com/gilesknap/IaC-at-home2
+
 PROJECT STALLED
 
 I got bogged down in creating a kubernetes image for raspberry pi and have
